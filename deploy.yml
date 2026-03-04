@@ -28,4 +28,4 @@
       
      
     - name: Running container
-      shell: docker run -it -d --name calculator varun000reddy/calculator /bin/bash
+      shell: docker run -it -d --name calculator -p 8081:80 varun000reddy/calculator /bin/bash
