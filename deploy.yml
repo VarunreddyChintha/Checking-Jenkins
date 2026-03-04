@@ -1,7 +1,7 @@
 ---
 - name: Pull Docker Image from Docker Hub
   hosts: localhost
-  remote_user: raju
+  remote_user: jenkins
   become: false
   tasks:
     - name: Pull Docker Image
@@ -21,11 +21,11 @@
         
     - name: stop container
       shell: docker stop calculator
-      ignore_errors: yes
+      
       
     - name: rm container
       shell: docker rm calculator
-      ignore_errors: yes
+      
      
     - name: Running container
       shell: docker run -it -d --name calculator -p 8081:80 varun000reddy/calculator /bin/bash
