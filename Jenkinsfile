@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     // Checkout the code from the GitHub repository
-                    git branch: 'main', url: "${https://github.com/VarunreddyChintha/Checking-Jenkins}"
+                    git branch: 'main', url: "https://github.com/VarunreddyChintha/Checking-Jenkins.git"
                 }
             }
         }
