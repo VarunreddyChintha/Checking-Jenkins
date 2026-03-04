@@ -6,7 +6,7 @@
   tasks:
     - name: Pull Docker Image
       docker_image:
-        name: "iiitb/calculator"
+        name: "varun000reddy/calculator"
         source: pull
       register: docker_pull_result
 
@@ -28,4 +28,4 @@
       ignore_errors: yes
      
     - name: Running container
-      shell: docker run -it -d --name calculator iiitb/calculator /bin/bash
+      shell: docker run -it -d --name calculator -p 8081:80 varun000reddy/calculator /bin/bash
