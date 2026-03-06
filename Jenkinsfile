@@ -50,4 +50,21 @@ pipeline {
         }
 
     }
+     post {
+        success {
+            emailext(
+                subject: "Jenkins Build SUCCESS",
+                body: "The Calculator project pipeline executed successfully.",
+                to: "varun000reddy@gmail.com"
+            )
+        }
+
+        failure {
+            emailext(
+                subject: "Jenkins Build FAILED",
+                body: "The Jenkins pipeline failed. Please check the logs.",
+                to: "varun000reddy@gmail.com"
+            )
+        }
+    }
 }
