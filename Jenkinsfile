@@ -6,6 +6,7 @@ pipeline {
     environment {
         DOCKER_IMAGE_NAME = 'calculator'
         GITHUB_REPO_URL = 'https://github.com/VarunreddyChintha/Checking-Jenkins.git'
+        IMAGE_NAME='
     }
 
     stages {
@@ -50,20 +51,12 @@ pipeline {
         }
 
     }
-     post {
-        success {
-            emailext(
-                subject: "Jenkins Build SUCCESS",
-                body: "The Calculator project pipeline executed successfully.",
-                to: "varun000reddy@gmail.com"
-            )
-        }
-
-        failure {
-            emailext(
-                subject: "Jenkins Build FAILED",
-                body: "The Jenkins pipeline failed. Please check the logs.",
-                to: "varun000reddy@gmail.com"
+      post {
+        always {
+            mail(
+                to: 'varun000reddy@gmail.com',
+                subject: "Build ${currentBuild.currentResult}",
+                body: "Build URL: ${env.BUILD_URL}"
             )
         }
     }
