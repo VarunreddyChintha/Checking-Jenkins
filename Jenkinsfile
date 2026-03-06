@@ -6,7 +6,7 @@ pipeline {
     environment {
         DOCKER_IMAGE_NAME = 'calculator'
         GITHUB_REPO_URL = 'https://github.com/VarunreddyChintha/Checking-Jenkins.git'
-        IMAGE_NAME='
+        IMAGE_NAME='varun000reddy/calculator'
     }
 
     stages {
